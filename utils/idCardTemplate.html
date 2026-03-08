@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>PawSOS Volunteer ID</title>
+
+<style>
+  /* PDF page = ID card size */
+  @page {
+    size: 85.6mm 54mm;
+    margin: 0;
+  }
+
+  html, body {
+    width: 85.6mm;
+    height: 54mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+  }
+
+  .id-card {
+    width: 85.6mm;
+    height: 54mm;
+    box-sizing: border-box;
+    border-radius: 0mm;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+
+  .top {
+    background: #2e7d32;
+    color: white;
+    padding: 3mm 4mm;
+  }
+
+  .top h2 {
+    margin: 0;
+    font-size: 4mm;
+  }
+
+  .top p {
+    margin: 1mm 0 0;
+    font-size: 2.6mm;
+  }
+
+  .body {
+    padding: 3mm 4mm;
+    font-size: 2.8mm;
+    line-height: 1.4;
+  }
+
+  .row {
+    margin-bottom: 1.2mm;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 0.4mm 1.8mm;
+    border-radius: 3mm;
+    font-size: 2.4mm;
+    background: #c8e6c9;
+    color: #2e7d32;
+    font-weight: bold;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 2.3mm;
+    color: #555;
+    background: #f1f1f1;
+    padding: 1.5mm 0;
+  }
+</style>
+</head>
+
+<body>
+  <div class="id-card">
+    <div class="top">
+      <h2>AnimalSathi Volunteer</h2>
+      <p>Animal Rescue Identification Card</p>
+    </div>
+
+    <div class="body">
+      <div class="row"><span class="label">Name:</span> {{name}}</div>
+      <div class="row"><span class="label">Volunteer ID:</span> {{id}}</div>
+      <div class="row"><span class="label">City:</span> {{city}}</div>
+      <div class="row">
+        <span class="label">Status:</span>
+        <span class="status">{{status}}</span>
+      </div>
+      <div class="row"><span class="label">Issued:</span> {{date}}</div>
+    </div>
+
+    <div class="footer">
+      🐾 Authorized AnimalSathi Volunteer
+    </div>
+  </div>
+</body>
+</html>

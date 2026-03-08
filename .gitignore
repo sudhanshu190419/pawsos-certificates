@@ -1,0 +1,4 @@
+node_modules
+.env
+certificates/*.pdf
+idcards/*.pdf
