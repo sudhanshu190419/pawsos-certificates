@@ -1,5 +1,3 @@
-console.log('🔥 Certificate & ID Card Server Running 🔥');
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -26,5 +24,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
+  console.log('🔥 Certificate & ID Card Server Running 🔥');
   console.log(`🚀 Server running on port ${PORT}`);
 });

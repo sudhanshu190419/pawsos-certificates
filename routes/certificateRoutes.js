@@ -39,7 +39,10 @@ router.post('/generate', async (req, res) => {
 
         const certPath = path.join(__dirname, '../certificates', finalCertFileName);
         
-        const browser = await puppeteer.launch({ headless: 'new' });
+        const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
         const page = await browser.newPage();
 
         await page.setContent(personalizedHtml, {
@@ -47,16 +50,17 @@ router.post('/generate', async (req, res) => {
         });
 
         await page.pdf({
-        path: certPath,
-        format: 'A4',
-        printBackground: true,
-        margin: {
-            top: '0mm',
-            right: '0mm',
-            bottom: '0mm',
-            left: '0mm'
-        }
-        });
+  path: certPath,
+  width: '210mm',
+  height: '297mm',
+  printBackground: true,
+  margin: {
+    top: '0mm',
+    right: '0mm',
+    bottom: '0mm',
+    left: '0mm'
+  }
+});
 
         await browser.close();
 
